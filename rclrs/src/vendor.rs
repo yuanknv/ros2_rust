@@ -75,6 +75,8 @@ macro_rules! impl_service_stub {
 macro_rules! impl_sequence_alloc_stub {
     ($name:ident) => {
         impl rosidl_runtime_rs::SequenceAlloc for $name {
+            type SequenceMetadata = ();
+
             fn sequence_init(_: &mut rosidl_runtime_rs::Sequence<Self>, _: usize) -> bool {
                 todo!()
             }
